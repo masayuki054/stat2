@@ -1,0 +1,504 @@
+#+OPTIONS: toc:3
+
+
+* 統計学のサイト
+
+  [[https://to-kei.net/][全人類がわかる統計学]] to-kei.net
+
+** [[https://to-kei.net/distribution/normal-distribution/standardization/][正規分布を標準化する方法と意味と例題と証明]] 
+** [[https://to-kei.net/distribution/chi-squared-distribution/][カイ二乗分布のわかりやすいまとめ | 全人類がわかる統計学]]
+
+   正規分布の二乗となる Y= X^2 の分布
+   Y = \sigma { X_i^2 } の分布
+
+*** ガンマ関数の意味
+
+    [[http://eman-physics.net/statistic/gamma_func.html][ＥＭＡＮの物理学・統計力学・ガンマ関数]]
+
+    [[https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%B3%E3%83%9E%E9%96%A2%E6%95%B0#/media/File:Gamma_abs.png ][abs(ガンマ関数)]] lWikipediaのグラフ
+    
+
+** [[https://to-kei.net/hypothesis-testing/t-test/][t検定とは？種類と手順を解説！ | 全人類がわかる統計学]]
+
+** [[https://to-kei.net/distribution/f-distribution/f-parameter-derivation/#i-2][F分布の期待値・分散を確率密度関数を用いて導出 | 全人類がわかる統計学]]
+
+   X_i ~ Chi^2 (r_i): 自由度 r_i のカイ2乗分布のとき，
+
+   F = (X_1/r_1) / (X_2/r_2) の分布
+
+
+[[http://ogyahogya.hatenablog.com/entry/20140919/1411094621][確率変数とは何か - 初級Mathマニアの寝言]]
+
+** [[https://to-kei.net/hypothesis-testing/about-2/][仮説検定とは？初心者にもわかりやすく解説！ | 全人類がわかる統計学]]
+
+
+* [[https://ocw.mit.edu/courses/mathematics/18-650-statistics-for-applications-fall-2016/][Statistics for Applications | Mathematics | MIT OpenCourseWare]]
+
+* 確率
+
+** WebText [[http://www.kogures.com/hitoshi/webtext/index.html#stat][確率・統計]] 木暮仁氏
+
+** [[http://ogyahogya.hatenablog.com/entry/20140918/1411033254][確率とは何か - 初級Mathマニアの寝言]]
+
+   - \sigma-加法族 F
+     1. \Omega \in F (標本空間を含む)
+     2. A \in F => ~A \in F (補集合)
+     3. A_i \in F => {\union A_i} \in F
+
+   - 可測空間，(標本空間 \Omega, \sigma-加法族 F)
+
+   - 確率測度 P
+     1. P(\omega) = 1
+     2. P(\union(A_i)) = \sum P(A_i)
+
+   - 確率空間 := (\omga, \omegaの加法族 F, P)
+     P: F -> [0,1]
+
+   - 確率
+
+     確率測度 P の値
+  
+*** 骰子の例
+**** 偶奇を扱かう
+      - \Omega := {[1], [2], [3], [4], [5], [6]}
+      - F := {\phi, {[1],[3],[5]},{[2],[4],[6]}, \Omega}
+**** 1が出たかを扱かう
+      - \Omega := {[1], [2], [3], [4], [5], [6]}
+      - F := {\phi, {[1]} {[3],[5],{[2],[4],[6]}, \Omega}
+
+
+* [[http://ogyahogya.hatenablog.com/entry/20140919/1411094621][確率変数とは何か - 初級Mathマニアの寝言]]
+
+** 確率変数 X : \Omega -> R
+
+  - X^-1(A) = { w \in \Omega | X(w)\in A}
+  - ボレル集合族 B の要素 A に対して，
+    X^-1(A) \in \sigma-加法族 F
+
+** 確率変数の確率分布
+
+   確率測度 P(X^-1(A)) == P^X (確率分布) 
+
+* [[http://ogyahogya.hatenablog.com/entry/2014/09/22/%E7%A2%BA%E7%8E%87%E5%A4%89%E6%95%B0%E3%81%AE%E5%92%8C_-%E5%90%88%E6%88%90%E7%A9%8D%E3%81%A8%E3%81%AE%E9%96%A2%E4%BF%82][確率変数の和 -合成積との関係- - 初級Mathマニアの寝言]]
+
+
+* 確率収束
+
+  [[https://ja.wikipedia.org/wiki/%E7%A2%BA%E7%8E%87%E5%A4%89%E6%95%B0%E3%81%AE%E5%8F%8E%E6%9D%9F][確率変数の収束 - Wikipedia"]] より
+
+** 確率収束の例
+*** ある人物の身長
+
+    次のような実験を考える。はじめに、路上の人の中からランダムに一人選
+    ぶ。その人の身長 X を、事前に確率変数として定めておく。その後、他
+    の人々に、その人の身長を目算で予測してもらう作業を始める。Xn を、
+    その人々からの n 回目の回答までに得られた身長の数字の平均とする。
+    すると（バイアスが無いならば）大数の法則により、列 Xn はあらかじめ
+    定めた確率変数 X へと確率収束する。
+
+*** 射手
+
+    人に弓を持たせ、的を目掛けて矢を射させる作業を考える。Xn を、その
+    人の n 回目までの射的の成績とする。初めの内は、その人はとても頻繁
+    に的を外すことも考えられるであろうが、何度も繰り返す内にその人の射
+    的の腕前は向上し、的の中心を射抜いて 10 点の成績を得ることも起こり
+    やすくなるであろう。何年も練習を重ねた後に、その人が 10 点以外の成
+    績を得る可能性はより低くなるであろう。したがって、列 Xn は X = 10
+    へと確率収束する。
+
+    ここで Xn は、概収束はしないことに注意されたい。その人がどれほど優
+    れた射手であろうと、失敗をする確率はわずかにでも常に存在している。
+    したがって、列 {Xn} は決して定常状態になることは無い。たとえその頻
+    度が少なくなろうと、パーフェクトでない成績は必ずそこに含まれる。
+
+    「例外的」な結果が起こる確率は、列が進むにつれてより小さくなる、と
+    いう考え方が、このタイプの収束の背景にある。
+
+    確率収束の概念は統計学において非常に頻繁に用いられる。例えば、ある
+    推定量が一致推定量であるとは、それが推定された量へと確率収束するこ
+    とを言う。確率収束はまた、大数の弱法則により確立される収束の一つで
+    もある。
+
+** 定義
+
+   - 任意の ε > 0 および任意の δ > 0 を選ぶ。
+   - X を中心とする半径 ε の
+     外側に Xn がある確率を Pn とする。
+
+   このとき、Xn が X へと確率収束するためには、
+   - 全ての n ≥ Nδ に対して確率 Pn が δ より小さくなるような、ある数
+     Nδ が存在しなければならない。
+
+   確率収束は、収束を表す矢印に記号 p を付け加えるか、確率極限作用素
+   "plim" を使って表される：
+
+    X n   → p   X ,     X n   → P   X ,     plim n → ∞ X n = X . {\displaystyle X_{n}\ {\xrightarrow {p}}\ X,\ \ X_{n}\ {\xrightarrow {P}}\ X,\ \ {\underset {n\to \infty }{\operatorname {plim} }}\,X_{n}=X.} {\displaystyle X_{n}\ {\xrightarrow {p}}\ X,\ \ X_{n}\ {\xrightarrow {P}}\ X,\ \ {\underset {n\to \infty }{\operatorname {plim} }}\,X_{n}=X.}
+
+** 性質
+
+    - 確率収束は、分布収束を意味する。
+
+    - 確率収束は、概収束を必ずしも意味しない。
+
+    - 逆に、分布収束が確率収束を意味するためには、極限の確率変数 X が
+      定数である必要がある。
+
+    - 連続写像定理（英語版）によると、どのような連続関数 g(·) に対して
+      も、 X n → p X {\displaystyle \scriptstyle X_{n}{\xrightarrow
+      {p}}X} {\displaystyle \scriptstyle X_{n}{\xrightarrow {p}}X} で
+      あるならば g ( X n ) → p g ( X ) {\displaystyle \scriptstyle
+      g(X_{n}){\xrightarrow {p}}g(X)} {\displaystyle \scriptstyle
+      g(X_{n}){\xrightarrow {p}}g(X)} が成立する。
+
+    - 確率収束は、ある固定された確率空間に対する確率変数の空間上の位相
+      を定義する。この位相は、次に述べるカイ・ファン（英語版）計量によ
+      り距離化可能である[4]：
+
+        d ( X , Y ) = inf { ε > 0 :   Pr ( | X − Y | > ε ) ≤ ε } {\displaystyle d(X,Y)=\inf \!{\big \{}\varepsilon >0:\ \Pr {\big (}|X-Y|>\varepsilon {\big )}\leq \varepsilon {\big \}}} {\displaystyle d(X,Y)=\inf \!{\big \{}\varepsilon >0:\ \Pr {\big (}|X-Y|>\varepsilon {\big )}\leq \varepsilon {\big \}}}
+
+      あるいは
+
+        d ( X , Y ) = E [ min ( | X − Y | , 1 ) ] {\displaystyle d(X,Y)=\mathbb {E} \left[\min(|X-Y|,1)\right]} {\displaystyle d(X,Y)=\mathbb {E} \left[\min(|X-Y|,1)\right]}.
+
+
+* 多項分布 (n-項分布)
+
+  [[https://mathtrain.jp/takoubunpu][多項分布の意味と平均，分散，共分散などの計算 | 高校数学の美しい物語]]
+
+  \Sigma_i p_i = 1
+  \Sigma_i n_i = N
+
+  N!/(\Pi_i n_i) \Pi_i p_i^{n_i}
+
+  E(N_i) = N p_i
+  V(N_i) = N p_i (1-p_i)
+
+
+
+* ポアソン分布
+
+*ポアソン分布* (Poisson distribution)とは、所与の時間間隔で発生する離散
+的な事象を数える特定の確率変数Xを持つ離散確率分布のことである。
+
+ある離散的な事象に対して、*ポアソン分布*は所与の時間内での生起回数の確
+率を示し、指数分布は生起期間の確率を示す
+
+** 定義
+
+   定数 /λ/ > 0 に対し、自然数を値にとる確率変数 X が
+
+   $P(X = k) = \frac{\lambda^{k}e^{-\lambda}}{k!}$
+
+   を満たすとき、確率変数 X はパラメータ λ のポアソン分布に従うという。
+
+   λは所与の区間内で発生する事象の期待発生回数に等しい。
+
+   /P/(/X/ = /k/) は、「所与の時間中に平均で λ 回発生する事象がちょうど
+   k回（kは非負の整数）発生する確率」に相当する。
+
+   例えば、事象が平均で2分間に1回発生する場合、10分間の中で事象が発生する
+   回数は、/λ/ = 5 のポアソン分布モデルを使って求められる。
+
+** 性質
+
+*** 平均・分散
+
+    ポアソン分布の平均 E[/X/]および分散 V[/X/] は、λ に等しい。
+
+    $\begin{array}{ll}
+    {E\lbrack X\rbrack} & {= \lambda,} \\
+    {V\lbrack X\rbrack} & {= \lambda.} \\
+    \end{array}$
+
+*** 最頻値
+
+    ポアソン分布の最頻値は、λ以下の最大の整数である。
+
+*** モーメント母関数
+
+    平均 λのポアソン分布のモーメント母関数 /M/_{/X/}(/t/) は、
+
+    $M_{X}(t) = E\left\lbrack e^{tX} \right\rbrack = \sum\limits_{k =
+    0}^{\infty}e^{tk}P(X = k) = \sum\limits_{k =
+    0}^{\infty}e^{tk}\frac{\lambda^{k}e^{- \lambda}}{k!} =
+    e^{\lambda(e^{t} -
+    1)}$
+
+    で与えられる。
+
+*** モーメント
+
+    ポアソン分布の高次モーメントは、λを含むトゥシャール多項式であり、
+    二項係数を持つ。
+
+    $\begin{array}{ll}
+    m_{1} & {= E\lbrack X\rbrack = \lambda,} \\
+    m_{2} & {= E\lbrack X^{2}\rbrack = \lambda^{2} + \lambda,} \\
+    m_{3} & {= E\lbrack X^{3}\rbrack = \lambda^{3} + 3\lambda^{2} + \lambda,} \\
+    & {\vdots} \\
+    \end{array}$
+
+    ポアソン分布の n次の階乗モーメントはλ^{n} である。
+
+    $E\lbrack X(X - 1)\cdots(X - n + 1)\rbrack = \lambda^{n}.$
+
+*** キュムラント
+
+    ポアソン分布の n次のキュムラント κ_{n} は全て、平均 λ と等しい。
+
+    $\kappa_{n} = \frac{\partial^{n}}{\partial t^{n}}\log{(M_{X}(t))}|_{t = 0} = \lambda.$
+
+*** 再生性
+
+    ポアソン分布は再生性を有する。すなわちX と Y が独立な確率変数であ
+    り、それぞれパラメータ λ, μを持つポアソン分布に従うとき、 確率変
+    数の和 /X/ + /Y/ はパラメータ λ + μのポアソン分布に従う。
+
+*** その他
+
+    ポアソン分布は無限分解可能な確率分布である。
+
+** 近似
+
+   λ が十分に大きい（たとえば λ > 1000）ならば、平均 λ, [[/wiki/%E6%A8%99%E6%BA%96%E5%81%8F%E5%B7%AE][標準偏差]]
+   √/λ/の[[/wiki/%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83][正規分布]]はこのポアソン分布の非常に優れた近似となる。
+
+   おおよそλ > 10であれば、適切な連続な分布への修正がなされている場合
+   に限り、正規分布はこのポアソン分布の優れた近似となる。
+
+   例えば/P/(/X/ ≤ /x/) に関して、x が非負の整数ならば、/P/(/X/ ≤
+   /x/ + 0.5)と置換することができる。
+
+** ポアソン過程
+
+   λは、単位時間当たりの事象の平均発生回数などの割合と見なされる場合
+   があり、*到着率*とよばれる。このとき、N_{t}を時刻 t より前に発生し
+   た事象の回数とすると、
+
+   $P(N_{t} = k) = \frac{e^{- \lambda t}(\lambda t)^{k}}{k!}$
+
+   となる。この式を満たすものを*ポアソン過程*という。さらに、最初の事
+   象が発生するまでの待機時間Tは、[[/wiki/%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83][指数分布]]による連続確率変数である。こ
+   の[[/wiki/%E7%A2%BA%E7%8E%87%E5%88%86%E5%B8%83][確率分布]]は、次のように導くことができる。
+
+   $P(T > t) = P(N_{t} = 0).$
+
+   時間を含む場合、すなわち1次元ポアソン過程では、各時間内で事象が発生
+   する回数を確率変数とする離散ポアソン分布と、待機時間を確率変数とす
+   る連続[[/wiki/%E3%82%A2%E3%83%BC%E3%83%A9%E3%83%B3%E5%88%86%E5%B8%83][アーラン分布]]の両方を含んでいる。1よりも高い次元のポアソン過程
+   についても同様である。
+
+** 事象
+
+*** 具体的な例
+
+    ポアソン分布は、[[/w/index.php?title=%E3%83%9D%E3%82%A2%E3%82%BD%E3%83%B3%E9%81%8E%E7%A8%8B&action=edit&redlink=1][ポアソン過程]]に関連して発生する。
+
+    これは、離散的な自然現象（所与の領域内や所与の時間内において、0回、
+    1回、2回、3回... と発生する現象）に該当するものであり、現象が発生
+    する確率は、時間ないし空間内において一定である。また、時間または空
+    間における発生間隔は[[/wiki/%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83][指数分布]]になる。次に、その例を示す。
+
+    - 1時間に特定の[[/wiki/%E4%BA%A4%E5%B7%AE%E7%82%B9][交差点]]を通過する車両の台数。
+    - 1ミリリットルの希釈された水試料中に含まれる特定の[[/wiki/%E7%B4%B0%E8%8F%8C][細菌]]の数（細菌数検査における[[/w/index.php?title=%E6%9C%80%E7%A2%BA%E6%B3%95&action=edit&redlink=1][最確法]]）。
+    - 単位面積あたりの雨粒の数。
+    - 1ページの[[/wiki/%E6%96%87%E7%AB%A0][文章]]を入力するとき、綴りを間違える回数。
+    - 1日に受け取る[[/wiki/%E9%9B%BB%E5%AD%90%E3%83%A1%E3%83%BC%E3%83%AB][電子メール]]の件数。
+    - 1時間あたりの電話がかかってくる件数。
+    - ある一定の時間内の店への来客数。
+    - 1分間の[[/wiki/Web%E3%82%B5%E3%83%BC%E3%83%90][Webサーバ]]へのアクセス数。
+    
+      例えば、1時間あたりの[[/wiki/%E3%82%A6%E3%82%A3%E3%82%AD%E3%83%9A%E3%83%87%E3%82%A3%E3%82%A2][ウィキペディア]]の[[/wiki/%E7%89%B9%E5%88%A5:%E6%9C%80%E8%BF%91%E3%81%AE%E6%9B%B4%E6%96%B0][最近更新したページ]]の編集数
+      もおおよそポアソン分布。
+    
+    - 1キロメートルあたりのある通り沿いの[[/wiki/%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3][レストラン]]の軒数。
+    - 1ヘクタールあたりの[[/wiki/%E3%82%A8%E3%82%BE%E3%83%9E%E3%83%84][エゾマツ]]の本数。
+    - 1立方光年あたりの[[/wiki/%E6%81%92%E6%98%9F][恒星]]の数。
+    - 単位時間あたりの[[/wiki/%E6%94%BE%E5%B0%84%E7%B7%9A][放射線]]の計数値である[[/wiki/%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E6%AF%8E%E5%88%86][カウント毎分]]やカウント毎秒（半減
+      期による減衰や外部からの放射能などによる変動がないと仮定して）。
+
+**** 歴史的例
+
+     上記の例のほか、歴史的に有名な事例としては、[[/wiki/%E3%83%AD%E3%82%B7%E3%82%A2][ロシア]]生まれで[[/wiki/%E3%83%89%E3%82%A4%E3%83%84][ドイツ]]
+     で活躍した[[/wiki/%E7%B5%8C%E6%B8%88%E5%AD%A6%E8%80%85][経済学者]]、[[/wiki/%E7%B5%B1%E8%A8%88%E5%AD%A6%E8%80%85][統計学者]]の[[/w/index.php?title=%E3%83%9C%E3%83%AB%E3%83%88%E3%82%AD%E3%83%BC%E3%83%B4%E3%82%A3%E3%83%83%E3%83%81&action=edit&redlink=1][ボルトキーヴィッチ]]（[[https://de.wikipedia.org/wiki/Ladislaus_von_Bortkewitsch][ドイツ語版]]）
+     (Владислав Иосифович Борткевич)による
+     「プロイセン陸軍で馬に蹴られて死亡した兵士数」の例が知られている。
+
+**** 事象の特徴
+
+     上記のように、稀にしか起こらないような現象を大量に観測した結果が
+     ポアソン分布に従う例は極めて多く見られる。このようなポアソン分布
+     に従う事象の中で、時間の経過とともに発生する事象の特徴は次のよう
+     にまとめられる。
+
+    1. （希少性）：時間幅tの間に着目している事象がちょうど1回起こる確
+       率が$\lambda\Delta t + o(\Delta t)$、2回以上起こる確率が
+       $o(\Delta t)$
+    2. （定常性）：事象の起きる確率は、どの時間帯で同じ
+    3. （独立性）：事象の起きる確率は、それ以前に起こった事象の回数や
+       起こり方には無関係
+    
+    ここで、/o/(Δ/t/) は Δ/t/に対して高位の無限小を表しており、Δ/t/
+    のスケールに注目したときに無視できる微小量であることを表す。
+    
+** 極限定理
+
+   パラメータが n と /p/ = /λ///n/である[[/wiki/%E4%BA%8C%E9%A0%85%E5%88%86%E5%B8%83][二項分布]]において、λを一定に
+   保ったまま n を無限大に近づけると、その分布は平均 λのポアソン分布
+   に近づく。すなわち、
+
+   $\lim\limits_{\lambda = np,n\rightarrow\infty}{(\frac{n}{k})}p^{k}(1 - p)^{n - k} = \frac{\lambda^{k}e^{- \lambda}}{k!}$[[https://wikimedia.org/api/rest_v1/media/math/render/svg/cc674fa93a134e9a8e0e965d571a6bb93006e806]]
+
+   が成り立つ。これを*ポアソンの極限定理*という。
+
+   導出の詳細を次に示す。計算には、以下の関係式を用いる。
+
+   $\lim\limits_{n\rightarrow\infty}\left( {1 - \frac{\lambda}{n}} \right)^{n} = e^{- \lambda}.$[[https://wikimedia.org/api/rest_v1/media/math/render/svg/d06d93762ac8e5de33f76977092b5a6fd647cc61]]
+
+   ここで /p/ = /λ///n/ とすると、
+
+   $\begin{array}{ll}
+   {\lim\limits_{n\rightarrow\infty}P(X = k)} & {= \lim\limits_{n\rightarrow\infty}{(\frac{n}{k})}p^{k}(1 - p)^{n - k}} \\
+   & {= \lim\limits_{n\rightarrow\infty}\frac{n!}{(n - k)!k!}\left( \frac{\lambda}{n} \right)^{k}\left( {1 - \frac{\lambda}{n}} \right)^{n - k}} \\
+   & {= \lim\limits_{n\rightarrow\infty}\underbrace{\left( \frac{n}{n} \right)\left( \frac{n - 1}{n} \right)\left( \frac{n - 2}{n} \right)\cdots\left( \frac{n - k + 1}{n} \right)}\underbrace{\left( \frac{\lambda^{k}}{k!} \right)}\underbrace{\left( {1 - \frac{\lambda}{n}} \right)^{n}}\underbrace{\left( {1 - \frac{\lambda}{n}} \right)^{- k}}.} \\
+   \end{array}$
+
+   nを無限大に近づけると、4つの下波括弧のうち、最初の下波括弧の部分は、
+   1に近づく。2番目の下波括弧の部分にはn が出現しないので、そのままで
+   ある。3番目の下波括弧の部分は、/e/^{−/λ/}に近づく。最後の下波括弧
+   の部分は、1に近づく。
+
+   したがって極限は存在し、
+
+   $\frac{\lambda^{k}e^{- \lambda}}{k!}$
+
+** 少数の法則
+
+   *法則*という言葉は、確率分布の同義語として使われることがあり、*法則
+   収束*は分布の収束を意味する。したがってポアソン分布は、滅多に起こり
+   得ない希少な事象の発生数の確率分布であることから、*少数の法則*と呼
+   ばれることがある。
+
+* ガンマ関数
+
+  [[https://commons.wikimedia.org/wiki/File:Gamma.png#/media/File:Gamma.png][GammaF;Wikimedia Commons]]
+
+* カイ2乗分布
+
+  データ科学便覧 [[https://data-science.gr.jp/theory/tpd_chi_squared_distribution.html][カイ二乗分布]] 他の分布との関係が詳しい 
+
+  - 確率密度関数を導出したい
+
+  - ガンマ分布の一種らしい
+
+* T-分布
+
+* F-分布
+
+* 検定について [[file:~/COMM/Lects/stat2/links.org::*%5B%5Bhttps://to-kei.net/hypothesis-testing/about-2/%5D%5B%E4%BB%AE%E8%AA%AC%E6%A4%9C%E5%AE%9A%E3%81%A8%E3%81%AF%EF%BC%9F%E5%88%9D%E5%BF%83%E8%80%85%E3%81%AB%E3%82%82%E3%82%8F%E3%81%8B%E3%82%8A%E3%82%84%E3%81%99%E3%81%8F%E8%A7%A3%E8%AA%AC%EF%BC%81%20|%20%E5%85%A8%E4%BA%BA%E9%A1%9E%E3%81%8C%E3%82%8F%E3%81%8B%E3%82%8B%E7%B5%B1%E8%A8%88%E5%AD%A6%5D%5D][仮説検定とは？初心者にもわかりやすく解説！ | 全人類がわかる統計学]]
+** [[file:~/COMM/Lects/stat2/links.org::*%5B%5Bhttps://to-kei.net/hypothesis-testing/t-test/%5D%5Bt%E6%A4%9C%E5%AE%9A%E3%81%A8%E3%81%AF%EF%BC%9F%E7%A8%AE%E9%A1%9E%E3%81%A8%E6%89%8B%E9%A0%86%E3%82%92%E8%A7%A3%E8%AA%AC%EF%BC%81%20|%20%E5%85%A8%E4%BA%BA%E9%A1%9E%E3%81%8C%E3%82%8F%E3%81%8B%E3%82%8B%E7%B5%B1%E8%A8%88%E5%AD%A6%5D%5D][t検定とは？種類と手順を解説！ | 全人類がわかる統計学]]
+
+
+* [[https://ja.wikipedia.org/wiki/%E3%82%AC%E3%82%A6%E3%82%B9%E7%A9%8D%E5%88%86][ガウス積分 - Wikipedia]]
+
+
+* 母集団と標本
+
+** [[https://to-kei.net/basic/glossary/sample-space/][標本と母集団の違いがすぐわかる解説 | 全人類がわかる統計学]]
+
+
+** 標本 (統計学) wikipedia
+
+   https://ja.wikipedia.org/wiki/%E6%A8%99%E6%9C%AC_(%E7%B5%B1%E8%A8%88%E5%AD%A6)
+
+   統計学における標本（ひょうほん、英: sample）とは、*母集団の部分集合*
+   を言う。
+
+   推測統計学においては、標本と母集団は明確に区別される。
+
+*** 概要
+
+    母集団を完全に調査するのは不可能な場合、標本から母集団の特性を推定
+    する必要がある。
+
+**** 標本抽出には
+
+     - 作為抽出法
+     - 無作為抽出法
+
+
+    統計学的推定（標本から母集団の性質を推定する）を行うには、各標本に
+    対し、それを選抜する確率を知る必要がある。このために様々な標本抽出
+    法が開発されている。例えば異なる標本を選抜する確率がすべて同じなら
+    ば、その抽出法を単純ランダム（無作為）抽出という。
+
+    日本工業規格では、標本(sample)を一つ以上の抽出単位からなる母集団の
+    部分集合と定義している[2]。
+
+    母集団を表現する数値を母数というのに対し、標本を表現する数値を統計
+    量という。統計量は標本から算出できる数値である。また統計量で特に母
+    数を推定するために用いるものを推定量という。
+
+*** 形式的定義
+
+    母集団分布を F とするとき、母集団から抽出された（無作為）標本
+    (random sample) とは分布 F に従う独立同分布確率変数列 x1, x2,
+    ... のことである。
+
+    確率変数列の長さを標本のサイズという。とりうる標本の全体が成す集合
+    Ω, 確率を定めうる集合の全体 M (⊂ 2^Ω), 分布を表す確率測度 P から
+    なる確率空間 (Ω, M, P) を標本空間という。
+
+    例えば母集団の分布 F が母平均 E[X] = m, 母分散 V[X] = σ2 を持つな
+    らば、標本 x1, x2, ... は i を任意の番号として平均 E[xi] = m, 分散
+    V[xi] = σ2 を満たす。
+
+    標本から適当な操作を行って新たに作り出される確率変数を統計量と呼ぶ。
+    統計量は（同じ量でも）標本の採り方に依存して定まり、一般に母集団の
+    分布とは異なる分布に従う。統計量の従う分布を標本分布と呼ぶ。
+
+    例えば標本 x = (x1, x2, ..., xn) に対し、その平均
+
+    x ¯ := x 1 + x 2 + ⋯ + x n n {\displaystyle {\bar {\mathbf {x}
+    }}:={\frac {x_{1}+x_{2}+\cdots +x_{n}}{n}}} \bar{\mathbf{x}} :=
+    \frac{x_1+x_2+\cdots+x_n}{n}
+
+    を取る操作を考えるとき、x の標本 x の取り方をさまざまに考えるものと
+    して得られる確率変数は統計量である。この統計量は標本平均と呼ばれ、X
+    などで表す。母集団の分布 F が母平均 E[X] = m, 母分散 V[X] = σ2 を
+    持つならば、標本平均 X の従う標本分布について、平均 E[X] = m, 分散
+    V[X] = σ2/n を得る。
+  
+  
+
+* 機械学習のテキスト
+
+- Neural Networks for Pattern Recognition. Christopher., New York, NY:
+  Oxford University Press, 1995. ISBN: 9780198538646.
+
+- Pattern Classification., Duda, Richard, Peter Hart, and David
+  Stork. 2nd ed. New York, NY:
+  Wiley-Interscience, 2000. ISBN: 9780471056690.
+
+- The Elements of Statistical Learning: Data Mining, Inference and
+  Prediction., Hastie, T., R. Tibshirani, and J. H. Friedman.  New
+  York, NY: Springer, 2001. ISBN: 9780387952840.
+
+- Information Theory, Inference, and Learning Algorithms., MacKay,
+  David. Cambridge, UK: Cambridge University
+  Press, 2003. ISBN: 9780521642989. Available on-line here.
+
+- Machine Learning. Mitchell, Tom. New York, NY:
+  McGraw-Hill, 1997. ISBN: 9780070428072.
+
+- Tommi Jaakkola, course materials for 6.867 Machine Learning,
+  Fall 2006. MIT OpenCourseWare (http://ocw.mit.edu/), Massachusetts
+  Institute of Technology. Downloaded on [DD Month YYYY].
+
+* 雑学的知識
+
+** (平均値, 分散) ~~ (剛体の重心， 剛体の慣性モーメント)
+
+   - 小針の確率・統計入門 の 2.2 一変数分布の基礎概念の中
+     - 慣性モーメントに関しては，[[http://eman-physics.net/dynamics/angular.html][ＥＭＡＮの物理学・力学・回転に関する物理量]]
+
