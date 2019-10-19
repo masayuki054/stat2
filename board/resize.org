@@ -1,0 +1,68 @@
+#+BEGIN_SRC ruby :tangle /tmp/stat2-02-title.rb
+#!/usr/bin/env ruby 
+# -*- coding: utf-8 -*-
+@titles = [
+'02-01-同時と周辺分布.jpg',
+'02-02-2次元密度関数のグラフ.jpg',
+'02-03-2次元離散分布の例.jpg',
+'02-04-2次元離散分布の例の確率分布.jpg',
+'02-05-2次元密度関数のグラフ.jpg',
+'02-06-周辺密度関数の定義.jpg',
+'02-07-多次元確率変数の特性値.jpg',
+'02-08-多次元の期待値.jpg',
+'02-09-多次元の平均値.jpg',
+'02-10-多次元の平均値.jpg',
+'02-11-多次元の平均値.jpg',
+'02-12-多次元の期待値.jpg',
+'02-13-多次元の分散.jpg',
+'02-14-共分散行列.jpg',
+'02-15-二次形式.jpg',
+'02-16-分散と相関係数.jpg',
+]
+
+@date = "stat2_02_1011"
+Dir.chdir(@date) do
+  i = 0
+  Dir.glob("*.JPG").sort.each do |original|
+    `convert #{original} -resize 25% #{@titles[i]}`
+    i = i+1
+  end
+end
+
+
+#+END_SRC
+
+
+#+BEGIN_SRC ruby :tangle /tmp/stat2-03-title.rb
+#!/usr/bin/env ruby 
+# -*- coding: utf-8 -*-
+@titles = [
+'03-01-確率変数の独立性.jpg',
+'03-02-確率変数の独立性-確率関数.jpg',
+'03-03-確率変数の独立性-確率分布関数.jpg',
+'03-04-確率変数の独立性-グラフ.jpg',
+'03-05-確率変数の関数の独立性.jpg',
+'03-06-確率変数の独立性と期待値.jpg',
+'03-07-確率変数の独立性と無相関性.jpg',
+'03-08-確率変数の和のとは.jpg',
+'03-09-確率変数の和の平均.jpg',
+'03-10-確率変数の和の分散.jpg',
+'03-11-和の平均と分散の一般化.jpg',
+]
+
+@date = "stat2_03_1018"
+Dir.chdir(@date) do
+  i = 0
+  Dir.glob("*.JPG").sort.each do |original|
+    `convert #{original} -resize 25% #{@titles[i]}`
+    i = i+1
+  end
+end
+
+
+#+END_SRC
+
+#+RESULTS:
+| IMG_1082.JPG | IMG_1083.JPG | IMG_1084.JPG | IMG_1085.JPG | IMG_1086.JPG | IMG_1087.JPG | IMG_1088.JPG | IMG_1089.JPG | IMG_1090.JPG | IMG_1091.JPG | IMG_1092.JPG |
+
+
