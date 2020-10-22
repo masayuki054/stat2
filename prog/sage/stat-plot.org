@@ -1,0 +1,30 @@
+#+BEGIN_SRC sage
+plot(exp(-x^2/2), [x,-2,2])
+
+#+END_SRC
+
+#+RESULTS:
+: /users/home/masayuki/.sage/temp/rock-2/4898/tmp_20TV8I.png
+
+#+BEGIN_SRC sage
+x1,x2 = var('x1, x2')
+plot3d(e^(-x1^2/2)*e^(-x2^2/2),[x1,-2,0], [x2, -2,2])
+
+#+END_SRC
+
+#+RESULTS:
+: Launched jmol viewer for Graphics3d Object
+
+#+BEGIN_SRC sage
+x1,x2 = var('x1, x2')
+G2 = plot3d(e^(-x1^2/2)*e^(-x2^2/2),[x1,-2,2], [x2, -2,2])
+G1 = plot3d(e^(-x1^2/2)*e^(-1^2/2),[x1,-2,2], [x2, -2,2])
+G3 = plot3d(e^(-x1^2/2)*e^(-0^2/2),[x1,-2,2], [x2, -2,2],color='red')
+G4 = plot3d(e^(-0^2/2)*e^(-x2^2/2),[x1,-2,2], [x2, -2,2],color='blue')
+show(G2)
+
+
+#+END_SRC
+
+#+RESULTS:
+: Launched jmol viewer for Graphics3d Object
