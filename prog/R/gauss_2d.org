@@ -90,9 +90,9 @@ draw_gauss(xx,y, gauss_2d, "lightblue", "gauss_2d_P(X=0, Y=y)", "graphs/gauss_1d
 draw_gauss(xx,y, gauss_2d_y, "blue", "gauss_2d_周辺_y", "graphs/gauss_2d_marginal_y.png")
 draw_gauss(x,yy, gauss_2d_x, "red", "gauss_2d_周辺_x", "graphs/gauss_2d_marginal_x.png")
 
-draw_gauss(x_0_1, y, gauss_2d, "lightblue", "P([0..1, -3..3])", "graphs/gauss_2d_(0..1,y)
+draw_gauss(x_0_1, y, gauss_2d, "lightblue", "P([0..1, -3..3])", "graphs/gauss_2d_(0..1,y).png
 ")
-draw_gauss(x_0_2, y_m2_0, gauss_2d, "lightblue", "P([0..1, -2..0])", "graphs/gauss_2d_x_y")
+draw_gauss(x_0_2, y_m2_0, gauss_2d, "lightblue", "P([0..1, -2..0])", "graphs/gauss_2d_x_y.png")
 
 #+end_src
 
